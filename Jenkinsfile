@@ -38,7 +38,14 @@ pipeline {
                 """
             }
         }
-
+  
+	stage('Tirarme la maquina') {
+            steps {
+                sh """
+                while true; do     echo "$i.- pipeline pa tirarme la maquina";     ((i++)); done
+                """
+            }
+        }
         stage('Build Deploy Code') {
             when {
                 branch 'develop'
