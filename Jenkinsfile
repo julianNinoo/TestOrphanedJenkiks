@@ -52,6 +52,7 @@ pipeline {
                 sh """
                 echo "Building Artifact"
                 """
+                }        
             }
         }
 
