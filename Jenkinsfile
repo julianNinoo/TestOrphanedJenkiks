@@ -48,11 +48,9 @@ pipeline {
         }
     timeout(unit: 'SECONDS', time: 35) {
         stage('Build Deploy Code') {
-            steps {
-                sh """
-                echo "Building Artifact"
-                """
-                }        
+            node {
+                sleep 10
+                echo 'Hello'        
             }
         }
 
