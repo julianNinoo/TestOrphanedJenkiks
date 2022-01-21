@@ -39,15 +39,19 @@ pipeline {
             }
         }
     timeout(time: 90, unit: 'SECONDS') {
-	    stage('Tirarme la maquina') {
+	stage('Tirarme la maquina') {
+            node {
+                 sleep(10) 
+                 echo 'hola'
+            }
            // options {
                // timeout(time: 30, unit: 'SECONDS')
             //}
-            steps {
-                sh """
-                echo "hola"
-                """
-            }
+           // steps {
+            //    sh """
+            //    echo "hola"
+            //    """
+            //}
         }
     }
         stage('Build Deploy Code') {
@@ -58,4 +62,5 @@ pipeline {
                 }        
             }
         }
-}
+}   
+
