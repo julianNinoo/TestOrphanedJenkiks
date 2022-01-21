@@ -41,7 +41,7 @@ pipeline {
   
 	stage('Tirarme la maquina') {
             options {
-                timeout(time: 3, unit: 'MINUTES')
+                timeout(time: 3, unit: 'HOURS')
             }
             steps {
                 sh """
