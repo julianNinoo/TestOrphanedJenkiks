@@ -42,17 +42,7 @@ pipeline {
 	stage('Tirarme la maquina') {
             steps {
                 sh """
-                i=0
-		while :
-		do
-    	 	    echo $i
-    		    ((i++))
-    		    if [ $i -gt 1100000000 ]
-    	            then
-        	        break
-    		    fi
-		done
-		echo "Finaliza con $i"
+                echo "hola"
                 """
             }
         }
