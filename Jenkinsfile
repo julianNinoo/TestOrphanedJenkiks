@@ -1,4 +1,7 @@
+pipeline {
+  agent any
 
+   
     stages {
         
         stage('Cleanup Workspace') {
@@ -36,9 +39,9 @@
             }
         }
   
-	    stage('Tirarme la maquina') {
+	stage('Tirarme la maquina') {
             options {
-                timeout(time: 1, unit: '')
+                timeout(time: 30, unit: 'SECONDS')
             }
             steps {
                 sh """
@@ -54,6 +57,4 @@
                 }        
             }
         }
-
-    }
-}
+ }   
