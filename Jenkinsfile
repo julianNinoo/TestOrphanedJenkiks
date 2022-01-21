@@ -1,7 +1,4 @@
-pipeline {
-  agent any
 
-   
     stages {
         
         stage('Cleanup Workspace') {
@@ -40,13 +37,15 @@ pipeline {
         }
   
 	    stage('Tirarme la maquina') {
+            options {
+                timeout(time: 1, unit: '')
+            }
             steps {
                 sh """
                 echo "hola"
                 """
             }
         }
-    timeout(unit: 'SECONDS', time: 35) {
         stage('Build Deploy Code') {
             steps {
                 sh """
@@ -56,5 +55,4 @@ pipeline {
             }
         }
 
-    }   
-}
+    }
