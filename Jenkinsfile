@@ -38,22 +38,16 @@ pipeline {
                 """
             }
         }
-    timeout(time: 90, unit: 'SECONDS') {
-	stage('Tirarme la maquina') {
-            node {
-                 sleep(10) 
-                 echo 'hola'
+	stage("chao maquina") {
+            options {
+                timeout(time: 3, unit: "SECONDS")
             }
-           // options {
-               // timeout(time: 30, unit: 'SECONDS')
-            //}
-           // steps {
-            //    sh """
-            //    echo "hola"
-            //    """
-            //}
+
+            steps {
+                echo "Hola"
+                sleep(time: 5, unit: "SECONDS")
+            }
         }
-    }
         stage('Build Deploy Code') {
             steps {
                 sh """
@@ -62,5 +56,4 @@ pipeline {
                 }        
             }
         }
-}   
-
+}
