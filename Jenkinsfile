@@ -45,7 +45,7 @@ pipeline {
 
             steps {
                 echo "Hola"
-                sleep(time: 300, unit: "SECONDS")
+                sleep(time: 10, unit: "SECONDS")
             }
         }
         stage('Build Deploy Code') {
