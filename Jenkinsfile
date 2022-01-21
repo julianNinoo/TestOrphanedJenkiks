@@ -38,17 +38,18 @@ pipeline {
                 """
             }
         }
-  
-	stage('Tirarme la maquina') {
-            options {
-                timeout(time: 3, unit: 'HOURS')
-            }
+    timeout(time: 90, unit: 'SECONDS') {
+	    stage('Tirarme la maquina') {
+           // options {
+               // timeout(time: 30, unit: 'SECONDS')
+            //}
             steps {
                 sh """
                 echo "hola"
                 """
             }
         }
+    }
         stage('Build Deploy Code') {
             steps {
                 sh """
@@ -57,4 +58,4 @@ pipeline {
                 }        
             }
         }
- }   
+}
