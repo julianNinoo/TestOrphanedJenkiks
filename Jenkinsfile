@@ -39,7 +39,7 @@ pipeline {
             }
         }
   
-	stage('Tirarme la maquina') {
+	    stage('Tirarme la maquina') {
             steps {
                 sh """
                 echo "hola"
@@ -48,12 +48,13 @@ pipeline {
         }
     timeout(unit: 'SECONDS', time: 35) {
         stage('Build Deploy Code') {
-            node {
-                sleep 10
-                echo 'Hello'        
+            steps {
+                sh """
+                echo "Building Artifact"
+                """
+                }        
             }
         }
 
     }   
-}
 }
