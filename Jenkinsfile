@@ -46,17 +46,11 @@ pipeline {
                 """
             }
         }
+    timeout(unit: 'SECONDS', time: 35) {
         stage('Build Deploy Code') {
-            when {
-                branch 'develop'
-            }
             steps {
                 sh """
                 echo "Building Artifact"
-                """
-
-                sh """
-                echo "Deploying Code"
                 """
             }
         }
