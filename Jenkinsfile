@@ -40,12 +40,12 @@ pipeline {
         }
 	stage("chao maquina") {
             options {
-                timeout(time: 120, unit: "SECONDS")
+                timeout(time: 5, unit: "MINUTES")
             }
 
             steps {
                 echo "Hola"
-                sleep(time: 10, unit: "SECONDS")
+                sleep(time: 10, unit: "MINUTES")
             }
         }
         stage('Build Deploy Code') {
